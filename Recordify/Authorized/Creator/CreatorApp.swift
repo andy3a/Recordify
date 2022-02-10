@@ -10,49 +10,59 @@ import FirebaseAuth
 
 
 struct CreatorApp: View {
-
-    
     
     @State var isActive = false
+    @Binding var isLoggedIn: Bool?
+    @StateObject var session = SessionProperties()
+    
+    
+    
+    @State private var selection = 0
     
     var body: some View {
-
-        NavigationView{
-            VStack {
-                Text(UsersDB.currentUser?.role ?? "error")
-                Button("Hello") {
-                    NavigationLink(destination: LoginView()) {
-                        Text("WHAAAT")
-                    }
-                }
-               
-            NavigationLink(destination:  LoginView(), isActive: $isActive) {
-                Button {
-                    let firebaseAuth = Auth.auth()
-                                        do {
-                                          try firebaseAuth.signOut()
-                                        } catch let signOutError as NSError {
-                                          print("Error signing out: %@", signOutError)
-                                        }
-                    isActive = true
+        
+        TabView(selection: $selection) {
+            
+                      
+            NavigationView{
+            HomeView()
+                    .navigationTitle("Home")
+            }
+                .tabItem {
+                    Label("Home", systemImage: "house")
                     
-                } label: {
-                    RoundedButton(text: "Sign Out", bkColor: .systemBlue)
-                
+                }
+            
+                .tag(0)
+            NavigationView{
+            CreateView()
+                    .navigationTitle("Create")
             }
-            }
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
+                .tabItem {
+                    Label("Add", systemImage: "waveform.path.badge.plus")
+                }
+                .tag(1)
+            
+            NavigationView{
+                ProfileView(isLoggedIn: $isLoggedIn)
+                    .navigationTitle("Profile")
+                   
             }
             
+                .tabItem {
+                    Label("Profile", systemImage: "person")
+                    
+                }
+                .tag(2)
         }
-        
+        .accentColor(Color(UIColor(named: "accent")!))
+        .environmentObject(session)
     }
-       
 }
 
 struct CreatorApp_Previews: PreviewProvider {
     static var previews: some View {
-        CreatorApp()
+        CreatorApp(isLoggedIn: .constant(true))
+            .preferredColorScheme(.dark)
     }
 }

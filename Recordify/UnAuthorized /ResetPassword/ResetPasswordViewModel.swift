@@ -11,8 +11,15 @@ import FirebaseAuth
 import SwiftUI
 
 
-class ResetPasswordViewModel {
+class ResetPasswordViewModel: ObservableObject {
     
+    @Environment(\.presentationMode) var presentation
+    
+    @Published var email: String = ""
+    @Published var isRecoverLoading = false
+    @Published var error: String?
+    @Published var alertMessage = ""
+    @Published var isShowingAlert = false
     
     func sendResetRequest(email: String, completion: @escaping (String?) -> Void )  {
         var myError: String? = nil
@@ -35,12 +42,12 @@ class ResetPasswordViewModel {
                 }
                 
             }
-           
+            
         }
-       
-        
-     
+
+    }
+    func popView()  {
+        self.presentation.wrappedValue.dismiss()
         
     }
-    
 }

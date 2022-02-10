@@ -11,11 +11,6 @@ struct RegisterView: View {
     
     @Environment(\.presentationMode) var presentation
     
-    @State var userEmail: String = ""
-    @State var password: String = ""
-    @State var passwordConfirm: String = ""
-    
-    @State private var selectedRole: UserRole = .user
     let roles = UserRole.allCases
     
     @State var isRegisterInProgress = false
@@ -23,7 +18,7 @@ struct RegisterView: View {
     
     @State private var isShowingAlert = false
     
-    let viewModel = RegisterViewModel()
+    @StateObject var viewModel = RegisterViewModel()
     
     @State var alertMessage = ""
     
@@ -35,16 +30,16 @@ struct RegisterView: View {
                 .frame(height: 30)
             VStack(alignment: .leading, spacing: 10) {
                 Text("E-mail")
-                TextField("E-mail", text: $userEmail)
+                TextField("E-mail", text: $viewModel.userEmail)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 Text("Password")
-                TextField("Password", text: $password)
+                TextField("Password", text: $viewModel.password)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 Text("Confirm the password")
-                TextField("Confirm the password", text: $passwordConfirm)
+                TextField("Confirm the password", text: $viewModel.passwordConfirm)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 Text("Choose your role")
-                Picker("Role", selection: $selectedRole) {
+                Picker("Role", selection: $viewModel.selectedRole) {
                     ForEach(roles, id: \.self) {
                         Text($0.rawValue)
                     }
@@ -56,7 +51,6 @@ struct RegisterView: View {
                     NavigationLink(destination:  RegisterView(), isActive: $isRegisterButtonActive) {
                         Button {
                             isRegisterInProgress = true
-                            putValuesInViewModel()
                             viewModel.registerUser {  result in
                                 alertMessage = result
                                 error = result
@@ -98,17 +92,6 @@ struct RegisterView: View {
     func popView()  {
         self.presentation.wrappedValue.dismiss()
         
-    }
-    
-    func doSmth() {
-        
-    }
-    
-    func putValuesInViewModel() {
-        viewModel.email = userEmail
-        viewModel.password = password
-        viewModel.confirm = passwordConfirm
-        viewModel.role = selectedRole
     }
 }
 

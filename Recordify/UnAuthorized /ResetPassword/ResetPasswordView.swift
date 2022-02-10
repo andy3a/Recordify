@@ -9,17 +9,10 @@ import SwiftUI
 
 struct ResetPasswordView: View {
     
-    @Environment(\.presentationMode) var presentation
+    @Environment(\.dismiss) var dismiss
+    //@Environment(\.presentationMode) var presentationMode
     
-    @State var email: String = ""
-    @State var isRecoverLoading = false
-    
-    
-    let viewModel = ResetPasswordViewModel()
-    
-    @State var error: String?
-    @State var alertMessage = ""
-    @State private var isShowingAlert = false
+    @StateObject private var viewModel = ResetPasswordViewModel()
     
     var body: some View {
         
@@ -28,31 +21,32 @@ struct ResetPasswordView: View {
                     .frame(height: 30)
                 Text("Enter your e-mail")
                     .padding(.horizontal)
-                TextField("Email", text: $email)
+                TextField("Email", text: $viewModel.email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                 Group {
-                NavigationLink(destination:  LoginView()) {
+                    NavigationLink(destination: LoginView(isLoggedIn: .constant(false))) {
                     Button {
-                        isRecoverLoading = true
-                        viewModel.sendResetRequest(email: email) { result in
+                        viewModel.isRecoverLoading = true
+                        viewModel.sendResetRequest(email: viewModel.email) { result in
                             if result == nil {
-                                alertMessage = "Please check you email and follow instructions"
-                                isShowingAlert = true
+                                viewModel.alertMessage = "Please check you email and follow instructions"
+                                viewModel.isShowingAlert = true
                             } else {
                                 
-                                alertMessage = result!
-                                error = alertMessage
-                                isShowingAlert = true
+                                viewModel.alertMessage = result!
+                                viewModel.error =  viewModel.alertMessage
+                                viewModel.isShowingAlert = true
                             }
                         }
                     } label: {
-                        RoundedButton(text: "Send recover e-mail", bkColor: .systemBlue, isLoading: isRecoverLoading)
+                        RoundedButton(text: "Send recover e-mail", bkColor: .systemBlue, isLoading: viewModel.isRecoverLoading)
                     }
                 }
-                NavigationLink(destination:  LoginView()) {
+                    NavigationLink(destination: LoginView(isLoggedIn: .constant(false))) {
                     Button {
-                        popView()
+                        dismiss()
+                        
                     } label: {
                         RoundedButton(text: "Cancel", bkColor: .systemRed)
                             
@@ -66,21 +60,16 @@ struct ResetPasswordView: View {
         
         
         
-        .alert(alertMessage, isPresented: $isShowingAlert) {
+            .alert(viewModel.alertMessage, isPresented: $viewModel.isShowingAlert) {
             Button("OK") {
-                isRecoverLoading = false
-                guard error == nil else {
-                    email = ""
+                viewModel.isRecoverLoading = false
+                guard  viewModel.error == nil else {
+                    viewModel.email = ""
                     return}
-                popView()
+                dismiss()
             }
         }
-    }
-    
-    func popView()  {
-        self.presentation.wrappedValue.dismiss()
-        
-    }
+    }  
 }
 
 struct ResetPasswordView_Previews: PreviewProvider {

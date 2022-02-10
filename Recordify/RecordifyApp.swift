@@ -11,25 +11,61 @@ import FirebaseAuth
 
 @main
 struct RecordifyApp: App {
+    
     init() {
         FirebaseApp.configure()
-        uploadImage()
+        //uploadImage()
+        findIfUserLoggedIn()
+        
     }
     
-    var isLoggedIn = false
+    @State var isLoggedIn: Bool? = nil
     
-    var body: some Scene {
-        
-        
-        WindowGroup {
-            if Auth.auth().currentUser != nil && Auth.auth().currentUser?.isEmailVerified == true {
-                UsersDB.currentUser?.role == "user"
-               ? AnyView(UserApp())
-               : AnyView(CreatorApp())
-            } else {
-                LoginView()
+    
+    func findIfUserLoggedIn() {
+        if Auth.auth().currentUser != nil && Auth.auth().currentUser?.isEmailVerified == true {
+            UsersDB.getSavedUser { error in
+                print("ERROR is \(error)")
+                isLoggedIn = true
+                return
             }
         }
+        guard let _ = isLoggedIn else {
+            isLoggedIn = false
+            return
+        }
+    }
+    
+    func setItTrue() {
+        isLoggedIn = true
+        print(isLoggedIn)
+    }
+    
+    var body: some Scene {
+        WindowGroup {
+            
+            ZStack {
+                if isLoggedIn == nil
+                { ProgressView()
+                    
+                } else {
+                    
+                    if isLoggedIn! && UsersDB.currentUser?.role == "user" {
+                        AnyView(UserApp(isLoggedIn: $isLoggedIn))
+                    }
+                    if isLoggedIn! && UsersDB.currentUser?.role == "creator" {
+                        AnyView(CreatorApp(isLoggedIn: $isLoggedIn))
+                    }
+                    if isLoggedIn == false {
+                        LoginView(isLoggedIn: $isLoggedIn)
+                    }
+                }
+            }
+            .onAppear {
+                findIfUserLoggedIn()
+            }
+        }
+        
     }
     
     func uploadImage() {
@@ -62,7 +98,7 @@ struct RecordifyApp: App {
     }
     
     func getUUID() -> String {
-       return UUID().uuidString
+        return UUID().uuidString
     }
     
     func saveImage(image: UIImage, UUIDString: String) -> URL? {

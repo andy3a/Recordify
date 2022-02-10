@@ -9,7 +9,17 @@ import Foundation
 import FirebaseAuth
 import UIKit
 
-class LoginViewModel {
+class LoginViewModel: ObservableObject {
+    
+    @Published var username: String = ""
+    @Published var password: String = ""
+    @Published var isRegisterActive = false
+    @Published var isSignInLoading = false
+    @Published var isSuccessfullyLoggedIn = false
+    @Published var isShowingAlert = false
+    
+    @Published var alertMessage: String = ""
+    
     func logInUser(email: String, password: String, completion: @escaping (String?)-> Void) {
         print(email, password)
         if email == "" || password == "" {
@@ -27,7 +37,7 @@ class LoginViewModel {
                 return
             }
             if authResult != nil {
-                UsersDB.getCurrentUserRole {
+                UsersDB.getCurrentUserRole {_ in
                     completion(nil)
                 }
                 

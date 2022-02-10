@@ -12,12 +12,22 @@ struct HomeView: View {
     let posts = PostsDB.posts
     
     var body: some View {
-        List {
+       
+        ScrollView {
+           
             RowWithPost(post: posts[0])
             RowWithPost(post: posts[1])
-                }
-        
-    }
+            RowWithPost(post: posts[0])
+            RowWithPost(post: posts[1])
+            RowWithPost(post: posts[0])
+            RowWithPost(post: posts[1])
+            RowWithPost(post: posts[0])
+            RowWithPost(post: posts[1])
+
+                
+        }
+        .navigationBarBackButtonHidden(true)
+        }
 }
 
 struct HomeView_Previews: PreviewProvider {
