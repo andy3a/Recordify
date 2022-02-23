@@ -15,9 +15,11 @@ struct ImageMoveAndScaleSheet: View {
     @StateObject var orientation = DeviceOrientation()
    
     
-    @StateObject var viewModel = ImageMoveAndScaleSheet.ViewModel()
+    @StateObject var viewModel = ImageMoveAndScaleSheetViewModel()
     
     @Binding var imageAttributes: ImageAttributes
+    
+    @Binding var shape: String
 
     @State private var isShowingImagePicker = false
     @State private var isShowingCameraPicker = false
@@ -102,7 +104,7 @@ struct ImageMoveAndScaleSheet: View {
             
             Rectangle()
                 .fill(Color.black).opacity(0.55)
-                .mask(HoleShapeMask().fill(style: FillStyle(eoFill: true)))
+                .mask(HoleShapeMask(shape: shape).fill(style: FillStyle(eoFill: true)))
 
             VStack {
                 Text((viewModel.originalImage != nil) ? viewModel.moveAndScale : viewModel.selectPhoto )
@@ -211,12 +213,25 @@ struct ImageMoveAndScaleSheet: View {
     /// - Parameter rect: a CGRect filling the device screen.
     ///
     ///Code for mask obtained from [StackOVerflow](https://stackoverflow.com/questions/59656117/swiftui-add-inverted-mask)
-    func HoleShapeMask() -> Path {
+    func HoleShapeMask(shape: String) -> Path {
         let rect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        let insetRect = CGRect(x: inset, y: inset, width: UIScreen.main.bounds.width - ( inset * 2 ), height: UIScreen.main.bounds.height - ( inset * 2 ))
-        var shape = Rectangle().path(in: rect)
-        shape.addPath(Circle().path(in: insetRect))
-        return shape
+        var returnShape = Rectangle().path(in: rect)
+        if shape == "Circle" {
+            
+            let insetRect = CGRect(x: inset, y: inset, width: UIScreen.main.bounds.width - ( inset * 2 ), height: UIScreen.main.bounds.height - ( inset * 2 ))
+            returnShape.addPath(Circle().path(in: insetRect))
+            
+        }
+        
+        if shape == "Square" {
+            let side = UIScreen.main.bounds.width - ( inset * 2 )
+            let vInset = (UIScreen.main.bounds.height - side) / 2
+            let insetRect2 = CGRect(x: inset, y: vInset, width: side, height: side)
+            
+            returnShape.addPath(Rectangle().path(in: insetRect2))
+            
+        }
+        return returnShape
     }
     
     //MARK: - Buttons, Labels
@@ -270,10 +285,10 @@ struct ImageMoveAndScaleSheet: View {
     }
 }
 
-struct ImageMoveAndScaleSheet_Previews: PreviewProvider {
-    static var previews: some View {
-        ImageMoveAndScaleSheet(viewModel: ImageMoveAndScaleSheet.ViewModel(),
-                               imageAttributes: .constant(ImageAttributes(withSFSymbol: "photo.circle.fill"))
-        )
-    }
-}
+//struct ImageMoveAndScaleSheet_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ImageMoveAndScaleSheet(viewModel: ImageMoveAndScaleSheet.ViewModel(),
+//                               imageAttributes: .constant(ImageAttributes(withSFSymbol: "photo.circle.fill")), shape: .constant("Circle"))
+//
+//    }
+//}

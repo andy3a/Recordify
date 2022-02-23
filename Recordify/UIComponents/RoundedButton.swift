@@ -11,11 +11,13 @@ struct RoundedButton : View {
     let text: String
     let bkColor: UIColor
     var isLoading = false
+    var isActive: Bool
     
-    init(text: String,  bkColor: UIColor, isLoading: Bool = false) {
+    init(text: String,  bkColor: UIColor, isLoading: Bool = false, isActive: Bool = true) {
         self.text = text
         self.bkColor = bkColor
-        self.isLoading = isLoading
+        self.isActive = isActive
+        
     }
 
     var body: some View {
@@ -33,7 +35,7 @@ struct RoundedButton : View {
             AnyView(progressView) : AnyView(labelView)
             Spacer()
         }
-        .background(Color(uiColor: bkColor))
+        .background(Color(uiColor: isActive ? bkColor: .gray))
         .cornerRadius(100)
         .padding(.horizontal)
     }

@@ -15,15 +15,14 @@ struct CreatorApp: View {
     @Binding var isLoggedIn: Bool?
     @StateObject var session = SessionProperties()
     
-    
-    
     @State private var selection = 0
-    
+
     var body: some View {
         
+        
+        
         TabView(selection: $selection) {
-            
-                      
+        
             NavigationView{
             HomeView()
                     .navigationTitle("Home")
@@ -45,6 +44,7 @@ struct CreatorApp: View {
             
             NavigationView{
                 ProfileView(isLoggedIn: $isLoggedIn)
+                //ProfileView()
                     .navigationTitle("Profile")
                    
             }
@@ -57,6 +57,9 @@ struct CreatorApp: View {
         }
         .accentColor(Color(UIColor(named: "accent")!))
         .environmentObject(session)
+        .onDisappear {
+            print("goes from memory?")
+        }
     }
 }
 

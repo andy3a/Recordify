@@ -22,6 +22,7 @@
 		FA3A0C8D27A94F3000EE6677 /* UserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A0C8C27A94F3000EE6677 /* UserApp.swift */; };
 		FA3A0C9027A951EC00EE6677 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A0C8F27A951EC00EE6677 /* HomeView.swift */; };
 		FA3A0C9327A9525400EE6677 /* PostsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A0C9227A9525400EE6677 /* PostsDB.swift */; };
+		FA3ACABC27BBFD3E00440813 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FA3ACABB27BBFD3E00440813 /* Kingfisher */; };
 		FA40CCA627ADA1D3006077AF /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40CCA527ADA1D3006077AF /* Test.swift */; };
 		FA40CCAF27B2C425006077AF /* ProfileSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40CCAE27B2C425006077AF /* ProfileSettingsView.swift */; };
 		FA40CCB327B2D65E006077AF /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = FA40CCB227B2D65E006077AF /* TinyConstraints */; };
@@ -38,6 +39,16 @@
 		FA40CCCE27B2D970006077AF /* SystemPHPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40CCC227B2D970006077AF /* SystemPHPicker.swift */; };
 		FA40CCCF27B2D970006077AF /* ImageMoveAndScaleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40CCC327B2D970006077AF /* ImageMoveAndScaleSheet.swift */; };
 		FA40CCD227B2F7A4006077AF /* SessionProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40CCD127B2F7A3006077AF /* SessionProperties.swift */; };
+		FA90EEEE27BD244C000C371E /* NewAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90EEED27BD244C000C371E /* NewAudio.swift */; };
+		FA97806427BFD54E00AE92D4 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97806327BFD54D00AE92D4 /* RecordButton.swift */; };
+		FA97806F27BFDF2A00AE92D4 /* WaveformImageDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97806827BFDF2900AE92D4 /* WaveformImageDrawer.swift */; };
+		FA97807027BFDF2A00AE92D4 /* TempiFFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97806927BFDF2900AE92D4 /* TempiFFT.swift */; };
+		FA97807127BFDF2A00AE92D4 /* WaveformLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97806A27BFDF2900AE92D4 /* WaveformLiveView.swift */; };
+		FA97807227BFDF2A00AE92D4 /* WaveformImageViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97806B27BFDF2900AE92D4 /* WaveformImageViewUI.swift */; };
+		FA97807327BFDF2A00AE92D4 /* WaveformImageTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97806C27BFDF2900AE92D4 /* WaveformImageTypes.swift */; };
+		FA97807427BFDF2A00AE92D4 /* WaveformAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97806D27BFDF2900AE92D4 /* WaveformAnalyzer.swift */; };
+		FA97807527BFDF2A00AE92D4 /* WaveformImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97806E27BFDF2900AE92D4 /* WaveformImageView.swift */; };
+		FA97807727BFE1E100AE92D4 /* sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA97807627BFE1E100AE92D4 /* sample.mp3 */; };
 		FA9D4CBF279FED960087D337 /* RecordifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D4CBE279FED960087D337 /* RecordifyApp.swift */; };
 		FA9D4CC3279FED970087D337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9D4CC2279FED970087D337 /* Assets.xcassets */; };
 		FA9D4CC6279FED970087D337 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9D4CC5279FED970087D337 /* Preview Assets.xcassets */; };
@@ -48,7 +59,10 @@
 		FA9D4CDC27A037020087D337 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D4CDB27A037010087D337 /* LoginView.swift */; };
 		FA9DD1EA27ABE44B008CC4EE /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9DD1E927ABE44B008CC4EE /* CreateView.swift */; };
 		FAC8EC9127B44D7800D3DD86 /* Purchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8EC9027B44D7800D3DD86 /* Purchases.swift */; };
-		FAC8EC9327B44E5200D3DD86 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8EC9227B44E5100D3DD86 /* ProfileViewModel.swift */; };
+		FAE1C38E27C3B37A008D48B9 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE1C38D27C3B37A008D48B9 /* TimerView.swift */; };
+		FAE1C3B627C4D460008D48B9 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE1C3B527C4D460008D48B9 /* AudioRecorder.swift */; };
+		FAE1C3B827C4D7BD008D48B9 /* RecordingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE1C3B727C4D7BD008D48B9 /* RecordingsList.swift */; };
+		FAE1C3BA27C4D7F5008D48B9 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE1C3B927C4D7F5008D48B9 /* AudioPlayer.swift */; };
 		FAE1CF3227A1741600D44D00 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE1CF3127A1741600D44D00 /* LoginViewModel.swift */; };
 		FAE1CF3427A1743000D44D00 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE1CF3327A1743000D44D00 /* RegisterView.swift */; };
 		FAE1CF3627A1743D00D44D00 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE1CF3527A1743D00D44D00 /* RegisterViewModel.swift */; };
@@ -70,7 +84,10 @@
 		FAE1CF5727A175E800D44D00 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FAE1CF5627A175E800D44D00 /* FirebaseStorage */; };
 		FAE1CF5927A175E800D44D00 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = FAE1CF5827A175E800D44D00 /* FirebaseStorageCombine-Community */; };
 		FAE1CF5C27A29EC100D44D00 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE1CF5B27A29EC100D44D00 /* RoundedButton.swift */; };
-		FAFC7F1427B51DAD009F59AA /* ProfileViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC7F1327B51DAD009F59AA /* ProfileViewWrapper.swift */; };
+		FAFC7F1627BA5B0A009F59AA /* NewRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC7F1527BA5B0A009F59AA /* NewRecord.swift */; };
+		FAFC7F1A27BA5E43009F59AA /* UploadArtwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC7F1927BA5E43009F59AA /* UploadArtwork.swift */; };
+		FAFC7F1C27BA5E57009F59AA /* UploadRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC7F1B27BA5E57009F59AA /* UploadRecord.swift */; };
+		FAFC7F1E27BA5E71009F59AA /* AddDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC7F1D27BA5E71009F59AA /* AddDescription.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +122,16 @@
 		FA40CCC327B2D970006077AF /* ImageMoveAndScaleSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageMoveAndScaleSheet.swift; sourceTree = "<group>"; };
 		FA40CCD027B2DF43006077AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FA40CCD127B2F7A3006077AF /* SessionProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionProperties.swift; sourceTree = "<group>"; };
+		FA90EEED27BD244C000C371E /* NewAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAudio.swift; sourceTree = "<group>"; };
+		FA97806327BFD54D00AE92D4 /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
+		FA97806827BFDF2900AE92D4 /* WaveformImageDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformImageDrawer.swift; sourceTree = "<group>"; };
+		FA97806927BFDF2900AE92D4 /* TempiFFT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempiFFT.swift; sourceTree = "<group>"; };
+		FA97806A27BFDF2900AE92D4 /* WaveformLiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformLiveView.swift; sourceTree = "<group>"; };
+		FA97806B27BFDF2900AE92D4 /* WaveformImageViewUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformImageViewUI.swift; sourceTree = "<group>"; };
+		FA97806C27BFDF2900AE92D4 /* WaveformImageTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformImageTypes.swift; sourceTree = "<group>"; };
+		FA97806D27BFDF2900AE92D4 /* WaveformAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformAnalyzer.swift; sourceTree = "<group>"; };
+		FA97806E27BFDF2900AE92D4 /* WaveformImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformImageView.swift; sourceTree = "<group>"; };
+		FA97807627BFE1E100AE92D4 /* sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sample.mp3; sourceTree = "<group>"; };
 		FA9D4CBB279FED960087D337 /* Recordify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recordify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9D4CBE279FED960087D337 /* RecordifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordifyApp.swift; sourceTree = "<group>"; };
 		FA9D4CC2279FED970087D337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -116,12 +143,19 @@
 		FA9D4CDB27A037010087D337 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FA9DD1E927ABE44B008CC4EE /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 		FAC8EC9027B44D7800D3DD86 /* Purchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchases.swift; sourceTree = "<group>"; };
-		FAC8EC9227B44E5100D3DD86 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		FAE1C38D27C3B37A008D48B9 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		FAE1C3B527C4D460008D48B9 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		FAE1C3B727C4D7BD008D48B9 /* RecordingsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingsList.swift; sourceTree = "<group>"; };
+		FAE1C3B927C4D7F5008D48B9 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		FAE1CF3127A1741600D44D00 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FAE1CF3327A1743000D44D00 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		FAE1CF3527A1743D00D44D00 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		FAE1CF5B27A29EC100D44D00 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
-		FAFC7F1327B51DAD009F59AA /* ProfileViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewWrapper.swift; sourceTree = "<group>"; };
+		FAFC7F1527BA5B0A009F59AA /* NewRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewRecord.swift; path = ../../../../../NewRecord.swift; sourceTree = "<group>"; };
+		FAFC7F1827BA5E30009F59AA /* NewRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecord.swift; sourceTree = "<group>"; };
+		FAFC7F1927BA5E43009F59AA /* UploadArtwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadArtwork.swift; sourceTree = "<group>"; };
+		FAFC7F1B27BA5E57009F59AA /* UploadRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadRecord.swift; sourceTree = "<group>"; };
+		FAFC7F1D27BA5E71009F59AA /* AddDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDescription.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +180,7 @@
 				FAE1CF5127A175E700D44D00 /* FirebaseFunctions in Frameworks */,
 				FAE1CF4F27A175E700D44D00 /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				FAE1CF4727A175E700D44D00 /* FirebaseDatabaseSwift-Beta in Frameworks */,
+				FA3ACABC27BBFD3E00440813 /* Kingfisher in Frameworks */,
 				FAE1CF4127A175E700D44D00 /* FirebaseAuthCombine-Community in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,13 +209,19 @@
 		FA3A0C8327A92A5E00EE6677 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA97806727BFDF1A00AE92D4 /* Wave */,
 				FA40CCB727B2D91B006077AF /* PhotoSelectAndCrop */,
 				FA3A0C8427A92A6D00EE6677 /* UserRole.swift */,
 				FA3A0C8627A9390A00EE6677 /* UsersDBItem.swift */,
+				FA97806327BFD54D00AE92D4 /* RecordButton.swift */,
 				FA9D4CCC279FF0880087D337 /* Post.swift */,
 				FA2B5D8127AC6C2400F8FDAE /* NavigationModel.swift */,
 				FA2B5D8727AC8D4C00F8FDAE /* DynamicColors.swift */,
 				FA40CCD127B2F7A3006077AF /* SessionProperties.swift */,
+				FAE1C38D27C3B37A008D48B9 /* TimerView.swift */,
+				FAE1C3B527C4D460008D48B9 /* AudioRecorder.swift */,
+				FAE1C3B727C4D7BD008D48B9 /* RecordingsList.swift */,
+				FAE1C3B927C4D7F5008D48B9 /* AudioPlayer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,10 +249,11 @@
 				FA3A0C8F27A951EC00EE6677 /* HomeView.swift */,
 				FA9DD1E927ABE44B008CC4EE /* CreateView.swift */,
 				FA2B5D8D27AD7E9700F8FDAE /* ProfileView.swift */,
-				FAC8EC9227B44E5100D3DD86 /* ProfileViewModel.swift */,
 				FA40CCAE27B2C425006077AF /* ProfileSettingsView.swift */,
 				FAC8EC9027B44D7800D3DD86 /* Purchases.swift */,
-				FAFC7F1327B51DAD009F59AA /* ProfileViewWrapper.swift */,
+				FAFC7F1527BA5B0A009F59AA /* NewRecord.swift */,
+				FA90EEED27BD244C000C371E /* NewAudio.swift */,
+				FAFC7F1727BA5E27009F59AA /* NewRecord */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -233,6 +275,20 @@
 				FA40CCBB27B2D970006077AF /* ViewModifiers.swift */,
 			);
 			path = PhotoSelectAndCrop;
+			sourceTree = "<group>";
+		};
+		FA97806727BFDF1A00AE92D4 /* Wave */ = {
+			isa = PBXGroup;
+			children = (
+				FA97806927BFDF2900AE92D4 /* TempiFFT.swift */,
+				FA97806D27BFDF2900AE92D4 /* WaveformAnalyzer.swift */,
+				FA97806827BFDF2900AE92D4 /* WaveformImageDrawer.swift */,
+				FA97806C27BFDF2900AE92D4 /* WaveformImageTypes.swift */,
+				FA97806E27BFDF2900AE92D4 /* WaveformImageView.swift */,
+				FA97806B27BFDF2900AE92D4 /* WaveformImageViewUI.swift */,
+				FA97806A27BFDF2900AE92D4 /* WaveformLiveView.swift */,
+			);
+			path = Wave;
 			sourceTree = "<group>";
 		};
 		FA9D4CB2279FED950087D337 = {
@@ -267,6 +323,7 @@
 				FA2B5D8327AC853E00F8FDAE /* A.A._1200x1200-2.jpg */,
 				FA2B5D8527AC886B00F8FDAE /* d3c4e744046205a49d06beb874df3b39da7c9c73.jpeg */,
 				FA9D4CC2279FED970087D337 /* Assets.xcassets */,
+				FA97807627BFE1E100AE92D4 /* sample.mp3 */,
 				FA9D4CC4279FED970087D337 /* Preview Content */,
 			);
 			path = Recordify;
@@ -327,6 +384,17 @@
 			path = UIComponents;
 			sourceTree = "<group>";
 		};
+		FAFC7F1727BA5E27009F59AA /* NewRecord */ = {
+			isa = PBXGroup;
+			children = (
+				FAFC7F1827BA5E30009F59AA /* NewRecord.swift */,
+				FAFC7F1927BA5E43009F59AA /* UploadArtwork.swift */,
+				FAFC7F1B27BA5E57009F59AA /* UploadRecord.swift */,
+				FAFC7F1D27BA5E71009F59AA /* AddDescription.swift */,
+			);
+			path = NewRecord;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -363,6 +431,7 @@
 				FAE1CF5627A175E800D44D00 /* FirebaseStorage */,
 				FAE1CF5827A175E800D44D00 /* FirebaseStorageCombine-Community */,
 				FA40CCB227B2D65E006077AF /* TinyConstraints */,
+				FA3ACABB27BBFD3E00440813 /* Kingfisher */,
 			);
 			productName = Recordify;
 			productReference = FA9D4CBB279FED960087D337 /* Recordify.app */;
@@ -395,6 +464,7 @@
 			packageReferences = (
 				FAE1CF3727A175E700D44D00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				FA40CCB127B2D65D006077AF /* XCRemoteSwiftPackageReference "TinyConstraints" */,
+				FA3ACABA27BBFD3E00440813 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = FA9D4CBC279FED960087D337 /* Products */;
 			projectDirPath = "";
@@ -414,6 +484,7 @@
 				FA9D4CC6279FED970087D337 /* Preview Assets.xcassets in Resources */,
 				FA2B5D8427AC853F00F8FDAE /* A.A._1200x1200-2.jpg in Resources */,
 				FA9D4CC3279FED970087D337 /* Assets.xcassets in Resources */,
+				FA97807727BFE1E100AE92D4 /* sample.mp3 in Resources */,
 				FA2B5D8627AC886B00F8FDAE /* d3c4e744046205a49d06beb874df3b39da7c9c73.jpeg in Resources */,
 				FA9D4CD3279FFDC80087D337 /* GoogleService-Info.plist in Resources */,
 			);
@@ -446,7 +517,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAFC7F1E27BA5E71009F59AA /* AddDescription.swift in Sources */,
 				FA9D4CDC27A037020087D337 /* LoginView.swift in Sources */,
+				FAE1C3BA27C4D7F5008D48B9 /* AudioPlayer.swift in Sources */,
+				FA90EEEE27BD244C000C371E /* NewAudio.swift in Sources */,
 				FAE1CF5C27A29EC100D44D00 /* RoundedButton.swift in Sources */,
 				FA9D4CCD279FF0880087D337 /* Post.swift in Sources */,
 				FA9D4CD1279FF5E80087D337 /* AddTab.swift in Sources */,
@@ -462,29 +536,41 @@
 				FA3A0C8227A9291D00EE6677 /* UsersDB.swift in Sources */,
 				FA40CCC927B2D970006077AF /* ImageMoveAndScaleSheet+Extensions.swift in Sources */,
 				FA40CCCB27B2D970006077AF /* DeviceOrientation.swift in Sources */,
-				FAFC7F1427B51DAD009F59AA /* ProfileViewWrapper.swift in Sources */,
+				FAE1C38E27C3B37A008D48B9 /* TimerView.swift in Sources */,
 				FAC8EC9127B44D7800D3DD86 /* Purchases.swift in Sources */,
 				FA9D4CBF279FED960087D337 /* RecordifyApp.swift in Sources */,
 				FA2B5D8827AC8D4C00F8FDAE /* DynamicColors.swift in Sources */,
 				FA3A0C8D27A94F3000EE6677 /* UserApp.swift in Sources */,
 				FA40CCCD27B2D970006077AF /* ImageManipulation.swift in Sources */,
+				FAE1C3B627C4D460008D48B9 /* AudioRecorder.swift in Sources */,
 				FA40CCC727B2D970006077AF /* ViewModifiers.swift in Sources */,
 				FA40CCA627ADA1D3006077AF /* Test.swift in Sources */,
+				FAE1C3B827C4D7BD008D48B9 /* RecordingsList.swift in Sources */,
 				FA40CCCC27B2D970006077AF /* Color+Extensions.swift in Sources */,
 				FA40CCC427B2D970006077AF /* ImagePane.swift in Sources */,
 				FA3A0C8B27A94F2600EE6677 /* CreatorApp.swift in Sources */,
+				FA97807427BFDF2A00AE92D4 /* WaveformAnalyzer.swift in Sources */,
+				FA97806427BFD54E00AE92D4 /* RecordButton.swift in Sources */,
 				FA40CCC627B2D970006077AF /* ImageMoveAndScaleSheet+ViewModel.swift in Sources */,
 				FA3A0C9327A9525400EE6677 /* PostsDB.swift in Sources */,
 				FA40CCD227B2F7A4006077AF /* SessionProperties.swift in Sources */,
+				FA97806F27BFDF2A00AE92D4 /* WaveformImageDrawer.swift in Sources */,
 				FA40CCC527B2D970006077AF /* Image+Extensions.swift in Sources */,
 				FAE1CF3627A1743D00D44D00 /* RegisterViewModel.swift in Sources */,
 				FA2B5D8227AC6C2400F8FDAE /* NavigationModel.swift in Sources */,
+				FA97807527BFDF2A00AE92D4 /* WaveformImageView.swift in Sources */,
+				FAFC7F1627BA5B0A009F59AA /* NewRecord.swift in Sources */,
+				FAFC7F1C27BA5E57009F59AA /* UploadRecord.swift in Sources */,
 				FA3A0C8727A9390A00EE6677 /* UsersDBItem.swift in Sources */,
+				FA97807227BFDF2A00AE92D4 /* WaveformImageViewUI.swift in Sources */,
 				FA2B5D8E27AD7E9700F8FDAE /* ProfileView.swift in Sources */,
+				FA97807027BFDF2A00AE92D4 /* TempiFFT.swift in Sources */,
 				FA40CCCA27B2D970006077AF /* ImageAttributes.swift in Sources */,
 				FA40CCAF27B2C425006077AF /* ProfileSettingsView.swift in Sources */,
-				FAC8EC9327B44E5200D3DD86 /* ProfileViewModel.swift in Sources */,
+				FAFC7F1A27BA5E43009F59AA /* UploadArtwork.swift in Sources */,
 				FAE1CF3227A1741600D44D00 /* LoginViewModel.swift in Sources */,
+				FA97807127BFDF2A00AE92D4 /* WaveformLiveView.swift in Sources */,
+				FA97807327BFDF2A00AE92D4 /* WaveformImageTypes.swift in Sources */,
 				FA40CCCE27B2D970006077AF /* SystemPHPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -636,7 +722,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -668,7 +754,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -696,6 +782,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FA3ACABA27BBFD3E00440813 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		FA40CCB127B2D65D006077AF /* XCRemoteSwiftPackageReference "TinyConstraints" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/roberthein/TinyConstraints";
@@ -715,6 +809,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FA3ACABB27BBFD3E00440813 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA3ACABA27BBFD3E00440813 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		FA40CCB227B2D65E006077AF /* TinyConstraints */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FA40CCB127B2D65D006077AF /* XCRemoteSwiftPackageReference "TinyConstraints" */;

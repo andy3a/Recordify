@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import Firebase
 
 ///The functions in this file reltae to positioning the original image in the "viewfinder"
 ///(the HoleShapeMask).
@@ -180,8 +180,11 @@ extension ImageMoveAndScaleSheet {
         let diameter = ( originAdjustment - inset * 2 ) * scale
         
         let xPos = ( ( ( displayW - originAdjustment ) / 2 ) + inset + ( currentPosition.width * -1 ) ) * scale
-        let yPos = ( ( ( displayH - originAdjustment ) / 2 ) + inset + ( currentPosition.height * -1 ) ) * scale
+        //print("xpos \(xPos)")
         
+        let yPos = ( ( ( displayH - originAdjustment ) / 2 ) + inset + ( currentPosition.height * -1 ) ) * scale
+        //print("yPos \(yPos)")
+        //print("diaPos \(diameter)")
         let tempUIImage: UIImage = croppedImage(from: imageAttributes.originalImage!, croppedTo: CGRect(x: xPos, y: yPos, width: diameter, height: diameter))
         
         
@@ -193,9 +196,12 @@ extension ImageMoveAndScaleSheet {
         imageAttributes.croppedImage = tempUIImage
         imageAttributes.image = Image(uiImage: tempUIImage)
         
-        print(imageAttributes.scale)
-        imageAttributes.objectWillChange.send()
+       
+        //imageAttributes.objectWillChange.send()
         
         
     }
+    
+    
+    
 }

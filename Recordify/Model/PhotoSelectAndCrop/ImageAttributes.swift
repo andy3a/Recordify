@@ -10,6 +10,25 @@ import SwiftUI
 ///A collection of attributes used to position an image in the ImageMoveAndScaleSheet at a determined scale and offset as well as a cropped image representing the same.
 ///Setting self.scale to 15 will keep an image from the Asset catalog from being too small. See line 159 in ImageMoveAndScaleSheet.swift.
 
+public class FirebaseImageAttributes {
+    
+    init(avatarURL_original: URL, avatarURL_cropped: URL, scale: CGFloat, xWidth: CGFloat, yHeight: CGFloat) {
+        self.avatarURL_original = avatarURL_original
+        self.avatarURL_cropped = avatarURL_cropped
+        self.scale = scale
+        self.xWidth = xWidth
+        self.yHeight = yHeight
+    }
+
+    var avatarURL_original: URL
+    var avatarURL_cropped: URL
+    var scale: CGFloat
+    var xWidth: CGFloat
+    var yHeight: CGFloat
+
+}
+
+
 public class ImageAttributes: ObservableObject {
     
     ///Cropped and / or scaled image take from originalImage
@@ -63,6 +82,16 @@ public class ImageAttributes: ObservableObject {
         self.xWidth = 1.0
         self.yHeight = 1.0
         
+    }
+    
+    public init(image: UIImage) {
+        self.image = Image(uiImage: image)
+        self.scale = 1.0
+        self.xWidth = 1.0
+        self.yHeight = 1.0
+    }
+    deinit{
+        print("deinit Image Attributes is triggered")
     }
 }
 

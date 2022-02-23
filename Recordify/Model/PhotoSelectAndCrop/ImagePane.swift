@@ -84,7 +84,7 @@
 //                .opacity(isEditMode ? 1.0 : 0.0)
 //        }
 //        .fullScreenCover(isPresented: $isShowingPhotoSelectionSheet) {
-//            ImageMoveAndScaleSheet(imageAttributes: .constant(imageAttributes))
+//            ImageMoveAndScaleSheet(imageAttributes: .constant($imageAttributes))
 //        }
 //    }
 //

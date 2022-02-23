@@ -26,8 +26,12 @@ struct RecordifyApp: App {
         if Auth.auth().currentUser != nil && Auth.auth().currentUser?.isEmailVerified == true {
             UsersDB.getSavedUser { error in
                 print("ERROR is \(error)")
+                if let error = error {
+                    return
+                } else {
                 isLoggedIn = true
-                return
+                    return
+                }
             }
         }
         guard let _ = isLoggedIn else {
@@ -68,33 +72,36 @@ struct RecordifyApp: App {
         
     }
     
-    func uploadImage() {
+    func uploadImage(iamge: UIImage? =  nil) -> URL? {
         let storage = Storage.storage()
         let storageRef = storage.reference()
         let riverUUID = getUUID()
         let myImageFile = saveImage(image: UIImage(named: "test")!, UUIDString: riverUUID)
+        var resultURL: URL? = nil
         
         print(myImageFile!)
         // Create a reference to the file you want to upload
         let riversRef = storageRef.child("images/\(riverUUID).jpg")
         
         // Upload the file to the path "images/rivers.jpg"
-        let uploadTask = riversRef.putFile(from: myImageFile!, metadata: nil) { (metadata, error) in
+        _ = riversRef.putFile(from: myImageFile!, metadata: nil) { (metadata, error) in
             guard let metadata = metadata else {
                 print("ERROR is \(String(describing: error))")
                 return
             }
             // Metadata contains file metadata such as size, content-type.
-            let size = metadata.size
+            let _ = metadata.size
             // You can also access to download URL after upload.
             riversRef.downloadURL { (url, error) in
                 guard let downloadURL = url else {
                     // Uh-oh, an error occurred!
                     return
                 }
-                print("ERROR is \(error)")
+                resultURL = downloadURL
+                print("ERROR is \(String(describing: error?.localizedDescription))")
             }
         }
+        return resultURL
     }
     
     func getUUID() -> String {

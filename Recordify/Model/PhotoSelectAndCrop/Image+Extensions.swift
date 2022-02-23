@@ -16,6 +16,8 @@ extension Image {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             .aspectRatio(contentMode: .fit)
             .clipShape(Circle())
+        //    .clipShape(Rectangle())
+        
             .foregroundColor(.gray)
     }
 }
